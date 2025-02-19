@@ -4,7 +4,7 @@ import os
 
 DATABASE_URL = os.getenv("DATABAES_URL", "postgresql://neondb_owner:npg_XFkto0CLIpU4@ep-black-mode-a82g0lwg-pooler.eastus2.azure.neon.tech/neondb?sslmode=require")
 
-engine = create_engine(DATABASE_URL, connect_args={"check_same_thread":False})
+engine = create_engine(DATABASE_URL)
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 Base = declarative_base()
 
